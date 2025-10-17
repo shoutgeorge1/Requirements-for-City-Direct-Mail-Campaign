@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>California Balcony Inspection Compliance Notice | DrBalcony</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --db-navy: #051c3e;
+            --db-orange: #ff7b3d;
+            --ink: #111827;
+            --muted: #6b7280;
+            --rule: #e5e7eb;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Source Serif 4', serif;
+            color: var(--ink);
+            line-height: 1.7;
+            background: #ffffff;
+        }
+        
+        .top-bar {
+            height: 6px;
+            background: var(--db-navy);
+        }
+        
+        .letter-container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 40px 20px 60px;
+        }
+        
+        .header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--rule);
+        }
+        
+        .return-address {
+            font-size: 13px;
+            line-height: 1.6;
+            color: var(--muted);
+        }
+        
+        .return-address strong {
+            color: var(--ink);
+            font-weight: 600;
+        }
+        
+        .logo-area {
+            text-align: right;
+        }
+        
+        .logo {
+            width: 48px;
+            height: 48px;
+        }
+        
+        .date-block {
+            margin-bottom: 30px;
+            font-size: 14px;
+            color: var(--muted);
+        }
+        
+        .recipient-block {
+            margin-bottom: 30px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .subject-line {
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: var(--ink);
+        }
+        
+        .qr-acknowledgment {
+            background: #f9fafb;
+            border-left: 3px solid var(--db-navy);
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            font-size: 14px;
+            color: var(--muted);
+        }
+        
+        .body-text {
+            margin-bottom: 25px;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        
+        .urgency-notice {
+            background: #fef3f2;
+            border-left: 3px solid var(--db-orange);
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            font-size: 15px;
+        }
+        
+        .urgency-notice strong {
+            color: var(--db-orange);
+        }
+        
+        .bullet-list {
+            list-style: none;
+            margin-bottom: 30px;
+            padding-left: 0;
+        }
+        
+        .bullet-list li {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 12px;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        
+        .bullet-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--db-navy);
+            font-weight: bold;
+        }
+        
+        .section-divider {
+            height: 1px;
+            background: var(--rule);
+            margin: 40px 0;
+        }
+        
+        h2 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--ink);
+        }
+        
+        .law-section {
+            margin-bottom: 25px;
+        }
+        
+        .law-section h3 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--ink);
+        }
+        
+        .law-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .law-section li {
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 8px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--muted);
+        }
+        
+        .law-section li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--muted);
+        }
+        
+        .session-block {
+            background: #f9fafb;
+            padding: 20px;
+            margin-bottom: 30px;
+            border: 1px solid var(--rule);
+        }
+        
+        .session-block h3 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .session-block p {
+            font-size: 14px;
+            color: var(--muted);
+            margin-bottom: 5px;
+        }
+        
+        .form-section {
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 2px solid var(--rule);
+        }
+        
+        .form-section h2 {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 6px;
+            color: var(--ink);
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--rule);
+            border-radius: 3px;
+            font-family: 'Source Serif 4', serif;
+            font-size: 15px;
+            background: white;
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: var(--db-navy);
+            box-shadow: 0 0 0 2px rgba(5, 28, 62, 0.1);
+        }
+        
+        .submit-btn {
+            width: 100%;
+            background: var(--db-orange);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 3px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .submit-btn:hover {
+            background: #e56a2d;
+        }
+        
+        .privacy-text {
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--muted);
+            text-align: center;
+        }
+        
+        .footer-line {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid var(--rule);
+            text-align: center;
+            font-size: 12px;
+            color: var(--muted);
+        }
+        
+        @media (max-width: 640px) {
+            .letter-container {
+                padding: 30px 15px;
+            }
+            
+            .header-row {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .logo-area {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar"></div>
+    
+    <div class="letter-container">
+        <!-- Header -->
+        <div class="header-row">
+            <div class="return-address">
+                <strong>DrBalcony</strong><br>
+                2500 Red Hill Ave Suite 200<br>
+                Santa Ana, CA 92705<br>
+                (805) 312-8508<br>
+                info@drbalcony.com
+            </div>
+            <div class="logo-area">
+                <img src="https://drbalcony.com/wp-content/uploads/2025/08/drbalcony-favicon.webp" alt="DrBalcony" class="logo">
+            </div>
+        </div>
+        
+        <!-- Date -->
+        <div class="date-block">
+            <script>document.write(new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }));</script>
+        </div>
+        
+        <!-- Recipient -->
+        <div class="recipient-block">
+            To: Property Owner/Manager<br>
+            California
+        </div>
+        
+        <!-- Subject Line -->
+        <div class="subject-line">
+            RE: California Balcony Inspection Compliance Notice
+        </div>
+        
+        <!-- QR Acknowledgment -->
+        <div class="qr-acknowledgment">
+            <strong>You scanned the official city mailer QR.</strong> This page provides compliance guidance and resources.
+        </div>
+        
+        <!-- Body Content -->
+        <div class="body-text">
+            Thank you for responding to the recent balcony and exterior elevated element inspection notice. California law requires periodic inspections of balconies, decks, stairways, and similar structures to ensure public safety.
+        </div>
+        
+        <div class="urgency-notice">
+            <strong>Many California cities are mailing inspection notices.</strong> Confirm your local requirements and deadlines.
+        </div>
+        
+        <div class="body-text">
+            As a property owner or manager, you are required to ensure compliance with the following state statutes:
+        </div>
+        
+        <ul class="bullet-list">
+            <li>Complete required inspections within the designated timeframe</li>
+            <li>Document all findings and submit reports to appropriate authorities</li>
+            <li>Address any deficiencies identified during inspection</li>
+            <li>Maintain records for future compliance verification</li>
+        </ul>
+        
+        <div class="section-divider"></div>
+        
+        <!-- Law Information -->
+        <h2>Applicable Regulations</h2>
+        
+        <div class="law-section">
+            <h3>SB-721 (Apartments)</h3>
+            <ul>
+                <li>Applies to buildings with 3 or more rental units</li>
+                <li>Inspection required every 6 years</li>
+                <li>Covers balconies, decks, walkways, stairways, and railings</li>
+                <li>Must be performed by licensed inspector</li>
+            </ul>
+        </div>
+        
+        <div class="law-section">
+            <h3>SB-326 (Condominiums and HOAs)</h3>
+            <ul>
+                <li>Applies to common interest developments</li>
+                <li>Inspection required every 9 years</li>
+                <li>Covers load-bearing components 6+ feet above ground</li>
+                <li>Non-compliance may result in fines and liability</li>
+            </ul>
+        </div>
+        
+        <div class="section-divider"></div>
+        
+        <!-- Session Information -->
+        <div class="session-block">
+            <h3>Free Compliance Webinar</h3>
+            <p><strong>Schedule:</strong> Daily at 11 AM PST — Pre-Recorded Session</p>
+            <p>Register below to receive instant access to our compliance guidance webinar, which includes inspection checklists, timeline requirements, and documentation procedures.</p>
+        </div>
+        
+        <!-- Form Section -->
+        <div class="form-section">
+            <h2>Register to Watch the Pre-Recorded Webinar</h2>
+            
+            <form id="complianceForm">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number (Optional)</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                
+                <!-- Hidden Fields -->
+                <input type="hidden" id="city" name="city" value="California Statewide">
+                <input type="hidden" id="page_path" name="page_path">
+                <input type="hidden" id="referrer" name="referrer">
+                <input type="hidden" id="utm_source" name="utm_source">
+                <input type="hidden" id="utm_medium" name="utm_medium">
+                <input type="hidden" id="utm_campaign" name="utm_campaign">
+                <input type="hidden" id="utm_content" name="utm_content">
+                <input type="hidden" id="utm_term" name="utm_term">
+                <input type="hidden" id="gclid" name="gclid">
+                <input type="hidden" id="msclkid" name="msclkid">
+                <input type="hidden" id="fbclid" name="fbclid">
+                
+                <button type="submit" class="submit-btn">Watch Now</button>
+                
+                <p class="privacy-text">No spam. We only use your info for compliance guidance.</p>
+            </form>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer-line">
+            <strong>DrBalcony</strong> • 
+            <a href="tel:+18053128508" style="color: var(--db-navy); text-decoration: none;">(805) 312-8508</a> • 
+            2500 Red Hill Ave Suite 200, Santa Ana, CA 92705 • 
+            <a href="https://drbalcony.com" style="color: var(--db-navy); text-decoration: none;">drbalcony.com</a>
+        </div>
+    </div>
+    
+    <script>
+        // UTM Tracking and Form Handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const params = new URLSearchParams(window.location.search);
+            const trackingFields = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'msclkid', 'fbclid'];
+            
+            // Parse URL parameters and save to localStorage
+            trackingFields.forEach(field => {
+                const value = params.get(field);
+                if (value) {
+                    localStorage.setItem(field, value);
+                }
+            });
+            
+            // Populate hidden fields with merged values (URL > localStorage > defaults)
+            const defaults = {
+                utm_source: 'directmail',
+                utm_medium: 'qr',
+                utm_campaign: 'city_dm_2025',
+                utm_content: 'california'
+            };
+            
+            trackingFields.forEach(field => {
+                const urlValue = params.get(field);
+                const storedValue = localStorage.getItem(field);
+                const defaultValue = defaults[field] || '';
+                const finalValue = urlValue || storedValue || defaultValue;
+                
+                const input = document.getElementById(field);
+                if (input) {
+                    input.value = finalValue;
+                }
+            });
+            
+            // Set page_path and referrer
+            document.getElementById('page_path').value = window.location.pathname + window.location.search;
+            document.getElementById('referrer').value = document.referrer || 'direct';
+            
+            // Form submission
+            document.getElementById('complianceForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(this);
+                const payload = Object.fromEntries(formData);
+                
+                console.log('Form submitted:', payload);
+                
+                // Uncomment and configure when ready to wire to your endpoint:
+                // fetch('YOUR_ENDPOINT_URL', {
+                //     method: 'POST',
+                //     headers: { 'Content-Type': 'application/json' },
+                //     body: JSON.stringify(payload)
+                // }).then(response => response.json())
+                //   .then(data => console.log('Success:', data))
+                //   .catch(error => console.error('Error:', error));
+                
+                alert('Thanks! The webinar link will be emailed to you shortly.');
+            });
+        });
+    </script>
+</body>
+</html>
