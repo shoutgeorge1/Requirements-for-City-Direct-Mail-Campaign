@@ -4,57 +4,196 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DrBalcony Landing Pages</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --db-navy: #051c3e;
+            --db-orange: #ff7b3d;
+            --db-cream: #fdeeea;
+            --ink: #111827;
+            --muted: #6b7280;
+            --rule: #e5e7eb;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
+            font-family: 'Poppins', sans-serif;
+            color: var(--ink);
+            line-height: 1.6;
+            background: #ffffff;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px;
-            background: #f5f5f5;
         }
-        .container {
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
         }
-        h1 {
-            color: #051c3e;
+        
+        .header h1 {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--db-navy);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .header p {
+            font-size: 18px;
+            color: var(--muted);
             margin-bottom: 30px;
         }
-        .page-list {
-            list-style: none;
-            padding: 0;
-        }
-        .page-list li {
-            margin-bottom: 15px;
-        }
-        .page-list a {
-            display: block;
-            padding: 15px 20px;
-            background: #ff7b3d;
+        
+        .badge {
+            background: var(--db-orange);
             color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s ease;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 30px;
         }
-        .page-list a:hover {
+        
+        .page-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .page-card {
+            background: white;
+            padding: 30px;
+            border: 2px solid var(--rule);
+            border-left: 6px solid var(--db-orange);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .page-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .page-card h3 {
+            color: var(--db-navy);
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        
+        .page-card p {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .page-card a {
+            display: inline-block;
+            background: var(--db-orange);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+        
+        .page-card a:hover {
             background: #e66a2a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 123, 61, 0.3);
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid var(--rule);
+        }
+        
+        .footer p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+        
+        .footer a {
+            color: var(--db-orange);
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .page-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 28px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="header">
+        <div class="badge">Free Educational Webinar</div>
         <h1>DrBalcony Landing Pages</h1>
         <p>Select a landing page to view:</p>
-        <ul class="page-list">
-            <li><a href="/el-cerrito.html">El Cerrito Landing Page</a></li>
-            <li><a href="/oxnard.html">Oxnard Landing Page</a></li>
-            <li><a href="/style-bold.html">Style Bold</a></li>
-            <li><a href="/style-city-gov.html">Style City Government</a></li>
-            <li><a href="/style-minimal.html">Style Minimal</a></li>
-            <li><a href="/style-letter.html">Style Letter</a></li>
-        </ul>
+    </div>
+    
+    <div class="page-grid">
+        <div class="page-card">
+            <h3>El Cerrito</h3>
+            <p>City-specific compliance portal for El Cerrito property owners. Features webinar registration and SB-721/SB-326 requirements.</p>
+            <a href="/el-cerrito.html">View El Cerrito Page</a>
+        </div>
+        
+        <div class="page-card">
+            <h3>Oxnard</h3>
+            <p>City-specific compliance portal for Oxnard property owners. Features webinar registration and SB-721/SB-326 requirements.</p>
+            <a href="/oxnard.html">View Oxnard Page</a>
+        </div>
+        
+        <div class="page-card">
+            <h3>Oakland</h3>
+            <p>City-specific compliance portal for Oakland property owners. Features webinar registration and SB-721/SB-326 requirements.</p>
+            <a href="/oakland.html">View Oakland Page</a>
+        </div>
+        
+        <div class="page-card">
+            <h3>Generic</h3>
+            <p>Statewide compliance portal for California property owners. Features webinar registration and SB-721/SB-326 requirements.</p>
+            <a href="/generic.html">View Generic Page</a>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>
+            <strong>DrBalcony</strong> • 
+            <a href="tel:+18053128508">(805) 312-8508</a> • 
+            2500 Red Hill Ave Suite 200, Santa Ana, CA 92705 • 
+            <a href="https://drbalcony.com">drbalcony.com</a>
+        </p>
     </div>
 </body>
 </html>
