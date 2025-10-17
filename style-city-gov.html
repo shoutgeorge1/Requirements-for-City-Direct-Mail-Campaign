@@ -6,13 +6,15 @@
     <title>City of Los Angeles - Building Safety Compliance Portal | DrBalcony</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --city-blue: #003366;
-            --city-red: #cc0000;
-            --city-gray: #666666;
-            --city-light: #f5f5f5;
+            --db-navy: #051c3e;
+            --db-orange: #ff7b3d;
+            --db-cream: #fdeeea;
+            --ink: #111827;
+            --muted: #6b7280;
+            --rule: #e5e7eb;
         }
         
         * {
@@ -22,18 +24,18 @@
         }
         
         body {
-            font-family: 'Source Sans Pro', sans-serif;
-            color: #333333;
+            font-family: 'Poppins', sans-serif;
+            color: var(--ink);
             line-height: 1.6;
             background: #ffffff;
         }
         
-        /* Official City Header */
+        /* City Header */
         .city-header {
-            background: var(--city-blue);
+            background: var(--db-navy);
             color: white;
             padding: 20px 0;
-            border-bottom: 4px solid var(--city-red);
+            border-bottom: 4px solid var(--db-orange);
         }
         
         .city-header-content {
@@ -60,7 +62,7 @@
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            color: var(--city-blue);
+            color: var(--db-navy);
             font-size: 18px;
         }
         
@@ -78,7 +80,7 @@
         }
         
         .portal-badge {
-            background: var(--city-red);
+            background: var(--db-orange);
             color: white;
             padding: 8px 16px;
             border-radius: 4px;
@@ -88,105 +90,171 @@
             letter-spacing: 1px;
         }
         
-        /* Official Notice Section */
-        .notice-section {
-            background: #ffffff;
-            padding: 40px 0;
-            border-bottom: 2px solid #e0e0e0;
+        /* Webinar Hero Section */
+        .webinar-hero {
+            background: linear-gradient(135deg, var(--db-navy) 0%, #0a2a5c 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
         }
         
-        .notice-content {
-            max-width: 1200px;
+        .webinar-hero-content {
+            max-width: 1000px;
             margin: 0 auto;
             padding: 0 20px;
         }
         
-        .notice-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 3px solid var(--city-blue);
-        }
-        
-        .notice-logo {
-            height: 50px;
-            margin-right: 20px;
-        }
-        
-        .notice-badge {
-            background: var(--city-red);
+        .webinar-badge {
+            background: var(--db-orange);
             color: white;
-            padding: 10px 20px;
-            border-radius: 4px;
+            padding: 8px 20px;
+            border-radius: 25px;
             font-size: 14px;
-            font-weight: 700;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 20px;
         }
         
-        .notice-title {
-            font-size: 32px;
+        .webinar-title {
+            font-size: 42px;
             font-weight: 700;
-            color: var(--city-blue);
             margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
         
-        .notice-subtitle {
+        .webinar-subtitle {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+        
+        .webinar-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .webinar-feature {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .webinar-feature h3 {
             font-size: 18px;
-            color: #555555;
-            margin-bottom: 30px;
-            font-weight: 500;
-        }
-        
-        .notice-text {
-            font-size: 16px;
-            line-height: 1.8;
-            color: #333333;
-            margin-bottom: 30px;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            padding: 15px 30px;
             font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--db-orange);
+        }
+        
+        .webinar-feature p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .cta-section {
+            background: var(--db-cream);
+            padding: 50px 0;
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .cta-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--db-navy);
+            margin-bottom: 20px;
+        }
+        
+        .cta-subtitle {
             font-size: 16px;
-            cursor: pointer;
-            border: none;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
+            color: var(--muted);
+            margin-bottom: 40px;
+        }
+        
+        .registration-form {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--db-orange);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--db-navy);
+            margin-bottom: 8px;
+            font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
         
-        .btn-primary {
-            background: var(--city-blue);
+        .form-group input {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid var(--rule);
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--db-orange);
+            box-shadow: 0 0 0 3px rgba(255, 123, 61, 0.1);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .form-submit {
+            width: 100%;
+            background: var(--db-orange);
             color: white;
-            border: 2px solid var(--city-blue);
+            padding: 18px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
         }
         
-        .btn-primary:hover {
-            background: #004080;
-            border-color: #004080;
+        .form-submit:hover {
+            background: #e66a2a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 123, 61, 0.3);
         }
         
-        .btn-secondary {
-            background: transparent;
-            color: var(--city-blue);
-            border: 2px solid var(--city-blue);
-        }
-        
-        .btn-secondary:hover {
-            background: var(--city-blue);
-            color: white;
+        .privacy-notice {
+            font-size: 12px;
+            color: var(--muted);
+            margin-top: 20px;
+            text-align: center;
         }
         
         /* Urgency Notice */
@@ -195,7 +263,7 @@
             border: 2px solid #ffeaa7;
             padding: 25px;
             margin: 30px 0;
-            border-radius: 4px;
+            border-radius: 8px;
         }
         
         .urgency-notice h3 {
@@ -215,7 +283,7 @@
         
         /* Compliance Information */
         .compliance-section {
-            background: var(--city-light);
+            background: #f8f9fa;
             padding: 60px 0;
         }
         
@@ -228,7 +296,7 @@
         .compliance-title {
             font-size: 28px;
             font-weight: 700;
-            color: var(--city-blue);
+            color: var(--db-navy);
             margin-bottom: 40px;
             text-align: center;
             text-transform: uppercase;
@@ -244,13 +312,14 @@
         .compliance-card {
             background: white;
             padding: 30px;
-            border: 2px solid #e0e0e0;
-            border-left: 6px solid var(--city-blue);
+            border: 2px solid var(--rule);
+            border-left: 6px solid var(--db-orange);
+            border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
         
         .compliance-card h4 {
-            color: var(--city-blue);
+            color: var(--db-navy);
             font-size: 20px;
             font-weight: 700;
             margin-bottom: 15px;
@@ -258,7 +327,7 @@
         }
         
         .compliance-card p {
-            color: #555555;
+            color: var(--muted);
             font-size: 15px;
             line-height: 1.6;
             margin-bottom: 15px;
@@ -271,119 +340,23 @@
         
         .compliance-card li {
             padding: 5px 0;
-            color: #555555;
+            color: var(--muted);
             font-size: 14px;
             position: relative;
             padding-left: 20px;
         }
         
         .compliance-card li:before {
-            content: "•";
+            content: "✓";
             position: absolute;
             left: 0;
-            color: var(--city-blue);
+            color: var(--db-orange);
             font-weight: bold;
-        }
-        
-        /* Registration Section */
-        .registration-section {
-            background: white;
-            padding: 60px 0;
-            border-top: 3px solid var(--city-blue);
-        }
-        
-        .registration-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-            text-align: center;
-        }
-        
-        .registration-title {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--city-blue);
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-        
-        .registration-subtitle {
-            font-size: 16px;
-            color: #666666;
-            margin-bottom: 40px;
-        }
-        
-        .registration-form {
-            background: var(--city-light);
-            padding: 40px;
-            border-radius: 8px;
-            border: 2px solid #e0e0e0;
-        }
-        
-        .form-group {
-            margin-bottom: 25px;
-            text-align: left;
-        }
-        
-        .form-group label {
-            display: block;
-            font-weight: 600;
-            color: var(--city-blue);
-            margin-bottom: 8px;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .form-group input {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #e0e0e0;
-            border-radius: 4px;
-            font-size: 16px;
-            transition: border-color 0.3s ease;
-        }
-        
-        .form-group input:focus {
-            outline: none;
-            border-color: var(--city-blue);
-        }
-        
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-        
-        .form-submit {
-            width: 100%;
-            background: var(--city-blue);
-            color: white;
-            padding: 15px;
-            border: none;
-            border-radius: 4px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: background 0.3s ease;
-        }
-        
-        .form-submit:hover {
-            background: #004080;
-        }
-        
-        .privacy-notice {
-            font-size: 12px;
-            color: #666666;
-            margin-top: 20px;
-            text-align: center;
         }
         
         /* FAQ Section */
         .faq-section {
-            background: var(--city-light);
+            background: white;
             padding: 60px 0;
         }
         
@@ -396,22 +369,22 @@
         .faq-title {
             font-size: 24px;
             font-weight: 700;
-            color: var(--city-blue);
+            color: var(--db-navy);
             margin-bottom: 40px;
             text-align: center;
             text-transform: uppercase;
         }
         
         .faq-item {
-            background: white;
+            background: #f8f9fa;
             margin-bottom: 20px;
-            border: 2px solid #e0e0e0;
-            border-radius: 4px;
+            border: 2px solid var(--rule);
+            border-radius: 8px;
             overflow: hidden;
         }
         
         .faq-question {
-            background: var(--city-blue);
+            background: var(--db-navy);
             color: white;
             padding: 20px;
             font-size: 16px;
@@ -425,7 +398,7 @@
         
         .faq-answer {
             padding: 20px;
-            color: #555555;
+            color: var(--muted);
             font-size: 15px;
             line-height: 1.6;
             display: none;
@@ -445,7 +418,7 @@
         
         /* Footer */
         .city-footer {
-            background: var(--city-blue);
+            background: var(--db-navy);
             color: white;
             padding: 30px 0;
             text-align: center;
@@ -463,7 +436,7 @@
         }
         
         .footer-content a {
-            color: white;
+            color: var(--db-orange);
             text-decoration: none;
         }
         
@@ -479,12 +452,8 @@
                 text-align: center;
             }
             
-            .notice-title {
-                font-size: 24px;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
+            .webinar-title {
+                font-size: 32px;
             }
             
             .form-row {
@@ -512,21 +481,68 @@
         </div>
     </header>
 
-    <!-- Official Notice Section -->
-    <section class="notice-section">
-        <div class="notice-content">
-            <div class="notice-header">
-                <img src="https://drbalcony.com/wp-content/uploads/2025/08/drbalcony-favicon.webp" alt="DrBalcony Logo" class="notice-logo">
-                <div class="notice-badge">Official Notice</div>
+    <!-- Webinar Hero Section -->
+    <section class="webinar-hero">
+        <div class="webinar-hero-content">
+            <div class="webinar-badge">Free Expert Training</div>
+            <h1 class="webinar-title">Compliance Webinar</h1>
+            <p class="webinar-subtitle">Master SB-721 & SB-326 Requirements with Expert Guidance</p>
+            
+            <div class="webinar-features">
+                <div class="webinar-feature">
+                    <h3>45-Minute Training</h3>
+                    <p>Comprehensive coverage of all compliance requirements and deadlines</p>
+                </div>
+                <div class="webinar-feature">
+                    <h3>Expert Q&A</h3>
+                    <p>Get answers to your specific compliance questions from licensed professionals</p>
+                </div>
+                <div class="webinar-feature">
+                    <h3>Free Resources</h3>
+                    <p>Downloadable checklists, timelines, and city-specific requirements</p>
+                </div>
             </div>
-            <h1 class="notice-title">Building Safety Compliance Portal</h1>
-            <p class="notice-subtitle">California Senate Bills 721 & 326 - Exterior Elevated Elements (EEE) Inspections</p>
-            <p class="notice-text">
-                <strong>Property Owner/Manager:</strong> You have accessed the official City of Los Angeles compliance portal via QR code. This system provides information regarding California Senate Bills 721 and 326 requirements for Exterior Elevated Elements (EEE) inspections as mandated by state law and enforced by the City of Los Angeles.
-            </p>
-            <div class="cta-buttons">
-                <a href="#registration" class="btn btn-primary">Access Compliance Portal</a>
-                <a href="#registration" class="btn btn-secondary">View Requirements</a>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2 class="cta-title">Reserve Your Free Training Spot</h2>
+            <p class="cta-subtitle">Join hundreds of property owners who've successfully navigated their compliance requirements</p>
+            
+            <div class="registration-form">
+                <form id="complianceForm">
+                    <!-- Hidden tracking fields -->
+                    <input type="hidden" name="city" value="Los Angeles">
+                    <input type="hidden" name="page_path" id="page_path">
+                    <input type="hidden" name="referrer" id="referrer">
+                    <input type="hidden" name="utm_source" id="utm_source">
+                    <input type="hidden" name="utm_medium" id="utm_medium">
+                    <input type="hidden" name="utm_campaign" id="utm_campaign">
+                    <input type="hidden" name="utm_content" id="utm_content">
+                    <input type="hidden" name="utm_term" id="utm_term">
+                    <input type="hidden" name="gclid" id="gclid">
+                    <input type="hidden" name="msclkid" id="msclkid">
+                    <input type="hidden" name="fbclid" id="fbclid">
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number (Optional)</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <button type="submit" class="form-submit">Reserve My Free Spot</button>
+                    <p class="privacy-notice">No spam. We only use your info to send webinar access and compliance guidance.</p>
+                </form>
             </div>
         </div>
     </section>
@@ -562,47 +578,6 @@
                         <li>Repair follow-through mandatory</li>
                     </ul>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Registration Section -->
-    <section class="registration-section" id="registration">
-        <div class="registration-content">
-            <h2 class="registration-title">Register for Compliance Training</h2>
-            <p class="registration-subtitle">Free educational webinar covering SB-721 and SB-326 requirements</p>
-            <div class="registration-form">
-                <form id="complianceForm">
-                    <!-- Hidden tracking fields -->
-                    <input type="hidden" name="city" value="Los Angeles">
-                    <input type="hidden" name="page_path" id="page_path">
-                    <input type="hidden" name="referrer" id="referrer">
-                    <input type="hidden" name="utm_source" id="utm_source">
-                    <input type="hidden" name="utm_medium" id="utm_medium">
-                    <input type="hidden" name="utm_campaign" id="utm_campaign">
-                    <input type="hidden" name="utm_content" id="utm_content">
-                    <input type="hidden" name="utm_term" id="utm_term">
-                    <input type="hidden" name="gclid" id="gclid">
-                    <input type="hidden" name="msclkid" id="msclkid">
-                    <input type="hidden" name="fbclid" id="fbclid">
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number (Optional)</label>
-                        <input type="tel" id="phone" name="phone">
-                    </div>
-                    <button type="submit" class="form-submit">Register for Training</button>
-                    <p class="privacy-notice">Information collected for compliance training purposes only. No spam.</p>
-                </form>
             </div>
         </div>
     </section>
@@ -654,7 +629,7 @@
     <footer class="city-footer">
         <div class="footer-content">
             <p>
-                <strong>City of Los Angeles</strong> • 
+                <strong>DrBalcony</strong> • 
                 <a href="tel:+18053128508">(805) 312-8508</a> • 
                 2500 Red Hill Ave Suite 200, Santa Ana, CA 92705 • 
                 <a href="https://drbalcony.com">drbalcony.com</a>
@@ -749,10 +724,10 @@
                     
                     // Simulate API call
                     setTimeout(() => {
-                        alert('Thank you! You will receive the compliance training link via email.');
+                        alert('Thank you! Your webinar access link will be emailed to you within 5 minutes.');
                         form.reset();
                         submitBtn.disabled = false;
-                        submitBtn.textContent = 'Register for Training';
+                        submitBtn.textContent = 'Reserve My Free Spot';
                     }, 1000);
                     
                     // TODO: Replace with actual form submission
