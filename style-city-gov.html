@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City of Los Angeles - Building Safety Compliance Portal | DrBalcony</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --city-blue: #003366;
+            --city-red: #cc0000;
+            --city-gray: #666666;
+            --city-light: #f5f5f5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: #333333;
+            line-height: 1.6;
+            background: #ffffff;
+        }
+        
+        /* Official City Header */
+        .city-header {
+            background: var(--city-blue);
+            color: white;
+            padding: 20px 0;
+            border-bottom: 4px solid var(--city-red);
+        }
+        
+        .city-header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .city-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .city-seal {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--city-blue);
+            font-size: 18px;
+        }
+        
+        .city-title {
+            font-size: 24px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .city-subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+        
+        .portal-badge {
+            background: var(--city-red);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Official Notice Section */
+        .notice-section {
+            background: #ffffff;
+            padding: 40px 0;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        .notice-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .notice-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid var(--city-blue);
+        }
+        
+        .notice-logo {
+            height: 50px;
+            margin-right: 20px;
+        }
+        
+        .notice-badge {
+            background: var(--city-red);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .notice-title {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--city-blue);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .notice-subtitle {
+            font-size: 18px;
+            color: #555555;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        
+        .notice-text {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #333333;
+            margin-bottom: 30px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 15px 30px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-primary {
+            background: var(--city-blue);
+            color: white;
+            border: 2px solid var(--city-blue);
+        }
+        
+        .btn-primary:hover {
+            background: #004080;
+            border-color: #004080;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--city-blue);
+            border: 2px solid var(--city-blue);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--city-blue);
+            color: white;
+        }
+        
+        /* Urgency Notice */
+        .urgency-notice {
+            background: #fff3cd;
+            border: 2px solid #ffeaa7;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+        
+        .urgency-notice h3 {
+            color: #856404;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        
+        .urgency-notice p {
+            color: #856404;
+            font-size: 16px;
+            font-weight: 500;
+            margin: 0;
+        }
+        
+        /* Compliance Information */
+        .compliance-section {
+            background: var(--city-light);
+            padding: 60px 0;
+        }
+        
+        .compliance-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .compliance-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--city-blue);
+            margin-bottom: 40px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        
+        .compliance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .compliance-card {
+            background: white;
+            padding: 30px;
+            border: 2px solid #e0e0e0;
+            border-left: 6px solid var(--city-blue);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .compliance-card h4 {
+            color: var(--city-blue);
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        
+        .compliance-card p {
+            color: #555555;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .compliance-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .compliance-card li {
+            padding: 5px 0;
+            color: #555555;
+            font-size: 14px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .compliance-card li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--city-blue);
+            font-weight: bold;
+        }
+        
+        /* Registration Section */
+        .registration-section {
+            background: white;
+            padding: 60px 0;
+            border-top: 3px solid var(--city-blue);
+        }
+        
+        .registration-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        
+        .registration-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--city-blue);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .registration-subtitle {
+            font-size: 16px;
+            color: #666666;
+            margin-bottom: 40px;
+        }
+        
+        .registration-form {
+            background: var(--city-light);
+            padding: 40px;
+            border-radius: 8px;
+            border: 2px solid #e0e0e0;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--city-blue);
+            margin-bottom: 8px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--city-blue);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .form-submit {
+            width: 100%;
+            background: var(--city-blue);
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.3s ease;
+        }
+        
+        .form-submit:hover {
+            background: #004080;
+        }
+        
+        .privacy-notice {
+            font-size: 12px;
+            color: #666666;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            background: var(--city-light);
+            padding: 60px 0;
+        }
+        
+        .faq-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .faq-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--city-blue);
+            margin-bottom: 40px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        
+        .faq-item {
+            background: white;
+            margin-bottom: 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            background: var(--city-blue);
+            color: white;
+            padding: 20px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-transform: uppercase;
+        }
+        
+        .faq-answer {
+            padding: 20px;
+            color: #555555;
+            font-size: 15px;
+            line-height: 1.6;
+            display: none;
+        }
+        
+        .faq-answer.active {
+            display: block;
+        }
+        
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-question.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        
+        /* Footer */
+        .city-footer {
+            background: var(--city-blue);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-content p {
+            margin: 0;
+            font-size: 14px;
+        }
+        
+        .footer-content a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .footer-content a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .city-header-content {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            
+            .notice-title {
+                font-size: 24px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .registration-form {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- City Header -->
+    <header class="city-header">
+        <div class="city-header-content">
+            <div class="city-logo">
+                <div class="city-seal">LA</div>
+                <div>
+                    <div class="city-title">City of Los Angeles</div>
+                    <div class="city-subtitle">Building & Safety Department</div>
+                </div>
+            </div>
+            <div class="portal-badge">Compliance Portal</div>
+        </div>
+    </header>
+
+    <!-- Official Notice Section -->
+    <section class="notice-section">
+        <div class="notice-content">
+            <div class="notice-header">
+                <img src="https://drbalcony.com/wp-content/uploads/2025/08/drbalcony-favicon.webp" alt="DrBalcony Logo" class="notice-logo">
+                <div class="notice-badge">Official Notice</div>
+            </div>
+            <h1 class="notice-title">Building Safety Compliance Portal</h1>
+            <p class="notice-subtitle">California Senate Bills 721 & 326 - Exterior Elevated Elements (EEE) Inspections</p>
+            <p class="notice-text">
+                <strong>Property Owner/Manager:</strong> You have accessed the official City of Los Angeles compliance portal via QR code. This system provides information regarding California Senate Bills 721 and 326 requirements for Exterior Elevated Elements (EEE) inspections as mandated by state law and enforced by the City of Los Angeles.
+            </p>
+            <div class="cta-buttons">
+                <a href="#registration" class="btn btn-primary">Access Compliance Portal</a>
+                <a href="#registration" class="btn btn-secondary">View Requirements</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Urgency Notice -->
+    <div class="urgency-notice">
+        <h3>⚠️ Compliance Deadline Notice</h3>
+        <p><strong>SB-326 Deadline:</strong> January 1, 2025 (First inspection required) | <strong>SB-721 Deadline:</strong> January 1, 2026 (Extended deadline) | <strong>Penalties:</strong> Up to $500 per day for non-compliance</p>
+    </div>
+
+    <!-- Compliance Information -->
+    <section class="compliance-section">
+        <div class="compliance-content">
+            <h2 class="compliance-title">Compliance Requirements</h2>
+            <div class="compliance-grid">
+                <div class="compliance-card">
+                    <h4>SB-721 (Apartments)</h4>
+                    <p>Applies to multi-family buildings with 3 or more rental units. Requires periodic inspections of exterior elevated elements.</p>
+                    <ul>
+                        <li>Inspection every 6 years</li>
+                        <li>Licensed inspector required</li>
+                        <li>Repair timelines mandatory</li>
+                        <li>Report retention required</li>
+                    </ul>
+                </div>
+                <div class="compliance-card">
+                    <h4>SB-326 (Condos/HOAs)</h4>
+                    <p>Applies to common interest developments and homeowners associations. Covers elevated structures and common areas.</p>
+                    <ul>
+                        <li>Inspection every 9 years</li>
+                        <li>Association reporting required</li>
+                        <li>Reserve study integration</li>
+                        <li>Repair follow-through mandatory</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section class="registration-section" id="registration">
+        <div class="registration-content">
+            <h2 class="registration-title">Register for Compliance Training</h2>
+            <p class="registration-subtitle">Free educational webinar covering SB-721 and SB-326 requirements</p>
+            <div class="registration-form">
+                <form id="complianceForm">
+                    <!-- Hidden tracking fields -->
+                    <input type="hidden" name="city" value="Los Angeles">
+                    <input type="hidden" name="page_path" id="page_path">
+                    <input type="hidden" name="referrer" id="referrer">
+                    <input type="hidden" name="utm_source" id="utm_source">
+                    <input type="hidden" name="utm_medium" id="utm_medium">
+                    <input type="hidden" name="utm_campaign" id="utm_campaign">
+                    <input type="hidden" name="utm_content" id="utm_content">
+                    <input type="hidden" name="utm_term" id="utm_term">
+                    <input type="hidden" name="gclid" id="gclid">
+                    <input type="hidden" name="msclkid" id="msclkid">
+                    <input type="hidden" name="fbclid" id="fbclid">
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number (Optional)</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <button type="submit" class="form-submit">Register for Training</button>
+                    <p class="privacy-notice">Information collected for compliance training purposes only. No spam.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="faq-content">
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <div class="faq-question">
+                    Is the training session free?
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Yes, the compliance training is completely free. It's a pre-recorded session with downloadable resources and compliance checklists.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    What if my building is newer?
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Newer buildings may still have inspection requirements. Use our compliance checklist to determine your specific obligations based on construction date and building type.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    How often are inspections required?
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    SB-721 requires inspections every 6 years for apartment buildings. SB-326 requires inspections every 9 years for condominiums and HOAs, with the first inspection due by January 1, 2025.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    What are the penalties for non-compliance?
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    Cities can impose fines up to $500 per day for unresolved compliance issues. Non-compliance can also impact property financing, sales transactions, and insurance coverage.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- City Footer -->
+    <footer class="city-footer">
+        <div class="footer-content">
+            <p>
+                <strong>City of Los Angeles</strong> • 
+                <a href="tel:+18053128508">(805) 312-8508</a> • 
+                2500 Red Hill Ave Suite 200, Santa Ana, CA 92705 • 
+                <a href="https://drbalcony.com">drbalcony.com</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // UTM Tracking and Form Handling
+        (function() {
+            // Capture UTM parameters and other tracking data
+            function getUrlParams() {
+                const params = new URLSearchParams(window.location.search);
+                return {
+                    utm_source: params.get('utm_source') || localStorage.getItem('utm_source') || 'directmail',
+                    utm_medium: params.get('utm_medium') || localStorage.getItem('utm_medium') || 'qr',
+                    utm_campaign: params.get('utm_campaign') || localStorage.getItem('utm_campaign') || 'city_dm_2025',
+                    utm_content: params.get('utm_content') || localStorage.getItem('utm_content') || 'los-angeles',
+                    utm_term: params.get('utm_term') || localStorage.getItem('utm_term') || '',
+                    gclid: params.get('gclid') || localStorage.getItem('gclid') || '',
+                    msclkid: params.get('msclkid') || localStorage.getItem('msclkid') || '',
+                    fbclid: params.get('fbclid') || localStorage.getItem('fbclid') || ''
+                };
+            }
+
+            // Save UTM data to localStorage
+            function saveUtmData(data) {
+                Object.keys(data).forEach(key => {
+                    if (data[key]) {
+                        localStorage.setItem(key, data[key]);
+                    }
+                });
+            }
+
+            // Populate hidden form fields
+            function populateTrackingFields() {
+                const data = getUrlParams();
+                saveUtmData(data);
+                
+                // Populate hidden fields
+                document.getElementById('utm_source').value = data.utm_source;
+                document.getElementById('utm_medium').value = data.utm_medium;
+                document.getElementById('utm_campaign').value = data.utm_campaign;
+                document.getElementById('utm_content').value = data.utm_content;
+                document.getElementById('utm_term').value = data.utm_term;
+                document.getElementById('gclid').value = data.gclid;
+                document.getElementById('msclkid').value = data.msclkid;
+                document.getElementById('fbclid').value = data.fbclid;
+                document.getElementById('page_path').value = window.location.pathname + window.location.search;
+                document.getElementById('referrer').value = document.referrer;
+            }
+
+            // FAQ Toggle Functionality
+            function initFAQ() {
+                const faqQuestions = document.querySelectorAll('.faq-question');
+                faqQuestions.forEach(question => {
+                    question.addEventListener('click', function() {
+                        const answer = this.nextElementSibling;
+                        const isActive = this.classList.contains('active');
+                        
+                        // Close all other FAQ items
+                        faqQuestions.forEach(q => {
+                            q.classList.remove('active');
+                            q.nextElementSibling.classList.remove('active');
+                        });
+                        
+                        // Toggle current item
+                        if (!isActive) {
+                            this.classList.add('active');
+                            answer.classList.add('active');
+                        }
+                    });
+                });
+            }
+
+            // Form Submission
+            function initForm() {
+                const form = document.getElementById('complianceForm');
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const submitBtn = form.querySelector('.form-submit');
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Submitting...';
+                    
+                    // Collect form data
+                    const formData = new FormData(form);
+                    const data = Object.fromEntries(formData.entries());
+                    
+                    // Log the data (replace with actual API call)
+                    console.log('Form submission:', data);
+                    
+                    // Simulate API call
+                    setTimeout(() => {
+                        alert('Thank you! You will receive the compliance training link via email.');
+                        form.reset();
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Register for Training';
+                    }, 1000);
+                    
+                    // TODO: Replace with actual form submission
+                    // fetch('/api/lead', {
+                    //     method: 'POST',
+                    //     headers: { 'Content-Type': 'application/json' },
+                    //     body: JSON.stringify(data)
+                    // });
+                });
+            }
+
+            // Initialize everything when DOM is loaded
+            document.addEventListener('DOMContentLoaded', function() {
+                populateTrackingFields();
+                initFAQ();
+                initForm();
+            });
+        })();
+    </script>
+</body>
+</html>

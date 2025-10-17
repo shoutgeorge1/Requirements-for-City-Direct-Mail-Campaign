@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stay Compliant in El Cerrito — Free Balcony Law Webinar | DrBalcony</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --db-navy: #051c3e;
+            --db-orange: #ff7b3d;
+            --db-cream: #fdeeea;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--db-navy);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero Section - Government Document Style */
+        .hero {
+            position: relative;
+            background: #ffffff;
+            padding: 40px 0;
+            border-bottom: 3px solid #1a365d;
+        }
+        
+        .hero::before {
+            display: none;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: #1a365d;
+            max-width: 800px;
+        }
+        
+        .hero-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 15px;
+        }
+        
+        .hero-logo {
+            height: 40px;
+            margin-right: 15px;
+        }
+        
+        .eyebrow {
+            display: inline-block;
+            background: #1a365d;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .hero h1 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: #1a365d;
+        }
+        
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            margin-bottom: 25px;
+            color: #2d3748;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        @media (min-width: 768px) {
+            .cta-buttons {
+                flex-direction: row;
+            }
+        }
+        
+        .btn-primary {
+            background: #1a365d;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary:hover {
+            background: #2c5282;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #1a365d;
+            padding: 12px 24px;
+            border: 2px solid #1a365d;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .btn-secondary:hover {
+            background: #1a365d;
+            color: white;
+            transform: translateY(-1px);
+        }
+        
+        /* Urgency Bar - Government Notice Style */
+        .urgency {
+            background: #fef2f2;
+            color: #dc2626;
+            padding: 20px 0;
+            text-align: center;
+            border-top: 3px solid #dc2626;
+            border-bottom: 3px solid #dc2626;
+        }
+        
+        .urgency h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .urgency p {
+            font-size: 1rem;
+            font-weight: 500;
+            margin: 0;
+            line-height: 1.4;
+        }
+        
+        /* Value Props */
+        .value-props {
+            background: var(--db-cream);
+            padding: 80px 0;
+        }
+        
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .value-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 123, 61, 0.1);
+        }
+        
+        .value-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+        
+        .value-number {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--db-navy);
+            margin-bottom: 15px;
+            line-height: 1;
+        }
+        
+        .value-label {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--db-navy);
+        }
+        
+        /* Law Info */
+        .law-info {
+            background: white;
+            padding: 80px 0;
+        }
+        
+        .law-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 40px;
+        }
+        
+        .law-card {
+            background: linear-gradient(135deg, var(--db-cream) 0%, #f8f9fa 100%);
+            padding: 40px;
+            border-radius: 20px;
+            border-left: 6px solid var(--db-orange);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+        
+        .law-card.sb326 {
+            border-left-color: var(--db-navy);
+        }
+        
+        .law-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .law-badge {
+            background: var(--db-orange);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-weight: 800;
+            font-size: 18px;
+            margin-right: 20px;
+        }
+        
+        .law-badge.sb326 {
+            background: var(--db-navy);
+        }
+        
+        .law-card h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--db-navy);
+        }
+        
+        .law-card p {
+            margin-bottom: 20px;
+            color: var(--db-navy);
+            opacity: 0.8;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .law-list {
+            list-style: none;
+        }
+        
+        .law-list li {
+            padding: 8px 0;
+            color: var(--db-navy);
+            opacity: 0.8;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .law-list li::before {
+            content: '✓';
+            color: var(--db-orange);
+            font-weight: bold;
+            margin-right: 12px;
+            font-size: 1.2rem;
+        }
+        
+        /* Form */
+        .form-section {
+            background: linear-gradient(135deg, var(--db-cream) 0%, #f0f4f8 100%);
+            padding: 80px 0;
+        }
+        
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            border-radius: 25px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 123, 61, 0.1);
+        }
+        
+        .form-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--db-navy);
+            margin-bottom: 40px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: 700;
+            color: var(--db-navy);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            background: #fafafa;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--db-orange);
+            box-shadow: 0 0 0 4px rgba(255, 123, 61, 0.1);
+            background: white;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+        
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .form-submit {
+            width: 100%;
+            background: linear-gradient(135deg, var(--db-orange) 0%, #e66a2a 100%);
+            color: white;
+            padding: 20px;
+            border: none;
+            border-radius: 12px;
+            font-size: 20px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 123, 61, 0.3);
+        }
+        
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(255, 123, 61, 0.4);
+        }
+        
+        .form-submit:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .privacy-note {
+            text-align: center;
+            font-size: 16px;
+            color: var(--db-navy);
+            opacity: 0.7;
+            margin-top: 20px;
+        }
+        
+        /* FAQ */
+        .faq {
+            background: white;
+            padding: 80px 0;
+        }
+        
+        .faq h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--db-navy);
+            margin-bottom: 50px;
+        }
+        
+        .faq-item {
+            background: var(--db-cream);
+            margin-bottom: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        
+        .faq-question {
+            width: 100%;
+            padding: 25px 30px;
+            background: none;
+            border: none;
+            text-align: left;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--db-navy);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question:hover {
+            background: rgba(255, 123, 61, 0.1);
+        }
+        
+        .faq-answer {
+            padding: 0 30px 25px;
+            color: var(--db-navy);
+            opacity: 0.8;
+            display: none;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .faq-answer.active {
+            display: block;
+        }
+        
+        .faq-icon {
+            transition: transform 0.3s ease;
+            font-size: 1.5rem;
+            color: var(--db-orange);
+        }
+        
+        .faq-question.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--db-navy);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer p {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        .footer a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .footer a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                height: 80vh;
+                min-height: 500px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .value-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .law-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-container {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-header">
+                    <img src="https://drbalcony.com/wp-content/uploads/2025/08/drbalcony-favicon.webp" alt="DrBalcony Logo" class="hero-logo">
+                    <div class="eyebrow">OFFICIAL NOTICE</div>
+                </div>
+                <h1>El Cerrito Building Safety Compliance Notice</h1>
+                <p><strong>Property Owner/Manager:</strong> You have accessed the official compliance portal via QR code. This notice pertains to California Senate Bills 721 and 326 requirements for Exterior Elevated Elements (EEE) inspections.</p>
+                <div class="cta-buttons">
+                    <a href="#register" class="btn-primary">Watch the Webinar — Free</a>
+                    <a href="#toolkit" class="btn-secondary">Get Compliance Toolkit</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Urgency Notice -->
+    <section class="urgency">
+        <div class="container">
+            <h2>⚠️ COMPLIANCE DEADLINE APPROACHING</h2>
+            <p><strong>SB-326 Deadline:</strong> January 1, 2025 (First inspection required) | <strong>SB-721 Deadline:</strong> January 1, 2026 (Extended deadline) | <strong>Penalties:</strong> Up to $500 per day for non-compliance</p>
+        </div>
+    </section>
+
+    <!-- Value Props -->
+    <section class="value-props">
+        <div class="container">
+            <div class="value-grid">
+                <div class="value-card">
+                    <div class="value-number">5,000+</div>
+                    <div class="value-label">Properties</div>
+                </div>
+                <div class="value-card">
+                    <div class="value-number">100%</div>
+                    <div class="value-label">Compliant</div>
+                </div>
+                <div class="value-card">
+                    <div class="value-number">$0</div>
+                    <div class="value-label">Fines</div>
+                </div>
+                <div class="value-card">
+                    <div class="value-number">Licensed</div>
+                    <div class="value-label">Inspectors</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Law Information -->
+    <section class="law-info">
+        <div class="container">
+            <div class="law-grid">
+                <div class="law-card">
+                    <div class="law-title">
+                        <span class="law-badge">SB-721</span>
+                        <h3>Apartments</h3>
+                    </div>
+                    <p>SB-721 covers exterior elevated elements for multi-family buildings (3+ units). Inspections by licensed pros, repair timelines, and report retention are required.</p>
+                    <ul class="law-list">
+                        <li>Applies to buildings with 3+ units</li>
+                        <li>Requires licensed inspector</li>
+                        <li>Mandatory repair timelines</li>
+                        <li>Report retention required</li>
+                    </ul>
+                </div>
+                <div class="law-card sb326">
+                    <div class="law-title">
+                        <span class="law-badge sb326">SB-326</span>
+                        <h3>Condos/HOAs</h3>
+                    </div>
+                    <p>SB-326 focuses on condo/HOA EEEs; periodic inspections, reporting to the association, and repair follow-through are required.</p>
+                    <ul class="law-list">
+                        <li>Applies to condos and HOAs</li>
+                        <li>Periodic inspection schedule</li>
+                        <li>Association reporting required</li>
+                        <li>Repair follow-through mandatory</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section class="form-section" id="register">
+        <div class="container">
+            <div class="form-container">
+                <h2>Register to Watch the Pre-Recorded Webinar</h2>
+                <form id="webinarForm">
+                    <!-- Hidden tracking fields -->
+                    <input type="hidden" name="city" value="El Cerrito">
+                    <input type="hidden" name="page_path" id="page_path">
+                    <input type="hidden" name="referrer" id="referrer">
+                    <input type="hidden" name="utm_source" id="utm_source">
+                    <input type="hidden" name="utm_medium" id="utm_medium">
+                    <input type="hidden" name="utm_campaign" id="utm_campaign">
+                    <input type="hidden" name="utm_content" id="utm_content">
+                    <input type="hidden" name="utm_term" id="utm_term">
+                    <input type="hidden" name="gclid" id="gclid">
+                    <input type="hidden" name="msclkid" id="msclkid">
+                    <input type="hidden" name="fbclid" id="fbclid">
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number (Optional)</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <button type="submit" class="form-submit">Watch Now</button>
+                    <p class="privacy-note">No spam. We only use your info for compliance guidance.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="toolkit">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <button class="faq-question">
+                    Is the webinar free?
+                    <span class="faq-icon">▼</span>
+                </button>
+                <div class="faq-answer">
+                    Yes, it's a pre-recorded, no-pressure session with Q&A resources and checklists.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    What if my building is newer?
+                    <span class="faq-icon">▼</span>
+                </button>
+                <div class="faq-answer">
+                    Newer buildings may still have inspection windows—use our checklist to confirm exemptions.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    How often do we need inspections?
+                    <span class="faq-icon">▼</span>
+                </button>
+                <div class="faq-answer">
+                    SB-721 requires inspections every 6 years for apartments. SB-326 requires inspections every 9 years for condos, with the first inspection due by January 1, 2025.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    What are the penalties for non-compliance?
+                    <span class="faq-icon">▼</span>
+                </button>
+                <div class="faq-answer">
+                    Cities can impose fines up to $500 per day for unresolved issues. Non-compliance can also impact financing, property sales, and insurance coverage.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section class="footer">
+        <div class="container">
+            <p>
+                <strong>DrBalcony</strong> • 
+                <a href="tel:+18053128508">(805) 312-8508</a> • 
+                2500 Red Hill Ave Suite 200, Santa Ana, CA 92705 • 
+                <a href="https://drbalcony.com">drbalcony.com</a>
+            </p>
+        </div>
+    </section>
+
+    <script>
+        // UTM Tracking and Form Handling
+        (function() {
+            // Capture UTM parameters and other tracking data
+            function getUrlParams() {
+                const params = new URLSearchParams(window.location.search);
+                return {
+                    utm_source: params.get('utm_source') || localStorage.getItem('utm_source') || 'directmail',
+                    utm_medium: params.get('utm_medium') || localStorage.getItem('utm_medium') || 'qr',
+                    utm_campaign: params.get('utm_campaign') || localStorage.getItem('utm_campaign') || 'city_dm_2025',
+                    utm_content: params.get('utm_content') || localStorage.getItem('utm_content') || 'el-cerrito',
+                    utm_term: params.get('utm_term') || localStorage.getItem('utm_term') || '',
+                    gclid: params.get('gclid') || localStorage.getItem('gclid') || '',
+                    msclkid: params.get('msclkid') || localStorage.getItem('msclkid') || '',
+                    fbclid: params.get('fbclid') || localStorage.getItem('fbclid') || ''
+                };
+            }
+
+            // Save UTM data to localStorage
+            function saveUtmData(data) {
+                Object.keys(data).forEach(key => {
+                    if (data[key]) {
+                        localStorage.setItem(key, data[key]);
+                    }
+                });
+            }
+
+            // Populate hidden form fields
+            function populateTrackingFields() {
+                const data = getUrlParams();
+                saveUtmData(data);
+                
+                // Populate hidden fields
+                document.getElementById('utm_source').value = data.utm_source;
+                document.getElementById('utm_medium').value = data.utm_medium;
+                document.getElementById('utm_campaign').value = data.utm_campaign;
+                document.getElementById('utm_content').value = data.utm_content;
+                document.getElementById('utm_term').value = data.utm_term;
+                document.getElementById('gclid').value = data.gclid;
+                document.getElementById('msclkid').value = data.msclkid;
+                document.getElementById('fbclid').value = data.fbclid;
+                document.getElementById('page_path').value = window.location.pathname + window.location.search;
+                document.getElementById('referrer').value = document.referrer;
+            }
+
+            // FAQ Toggle Functionality
+            function initFAQ() {
+                const faqQuestions = document.querySelectorAll('.faq-question');
+                faqQuestions.forEach(question => {
+                    question.addEventListener('click', function() {
+                        const answer = this.nextElementSibling;
+                        const isActive = this.classList.contains('active');
+                        
+                        // Close all other FAQ items
+                        faqQuestions.forEach(q => {
+                            q.classList.remove('active');
+                            q.nextElementSibling.classList.remove('active');
+                        });
+                        
+                        // Toggle current item
+                        if (!isActive) {
+                            this.classList.add('active');
+                            answer.classList.add('active');
+                        }
+                    });
+                });
+            }
+
+            // Form Submission
+            function initForm() {
+                const form = document.getElementById('webinarForm');
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const submitBtn = form.querySelector('.form-submit');
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Submitting...';
+                    
+                    // Collect form data
+                    const formData = new FormData(form);
+                    const data = Object.fromEntries(formData.entries());
+                    
+                    // Log the data (replace with actual API call)
+                    console.log('Form submission:', data);
+                    
+                    // Simulate API call
+                    setTimeout(() => {
+                        alert('Thanks! The webinar link will be emailed.');
+                        form.reset();
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Watch Now';
+                    }, 1000);
+                    
+                    // TODO: Replace with actual form submission
+                    // fetch('/api/lead', {
+                    //     method: 'POST',
+                    //     headers: { 'Content-Type': 'application/json' },
+                    //     body: JSON.stringify(data)
+                    // });
+                });
+            }
+
+            // Initialize everything when DOM is loaded
+            document.addEventListener('DOMContentLoaded', function() {
+                populateTrackingFields();
+                initFAQ();
+                initForm();
+            });
+        })();
+    </script>
+</body>
+</html>

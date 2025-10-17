@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>California Balcony Law — Free Webinar | DrBalcony</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --db-navy: #051c3e;
+            --db-orange: #ff7b3d;
+            --db-dark: #0a0e27;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--db-navy);
+            line-height: 1.6;
+        }
+        
+        .hero {
+            position: relative;
+            min-height: 650px;
+            background: linear-gradient(135deg, rgba(5, 28, 62, 0.95), rgba(10, 14, 39, 0.9)), 
+                        url('https://drbalcony.com/wp-content/uploads/2025/10/Path-scaled.jpeg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 4px solid var(--db-orange);
+        }
+        
+        .logo {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            width: 70px;
+            height: 70px;
+            background: white;
+            padding: 10px;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            z-index: 1;
+        }
+        
+        .eyebrow {
+            display: inline-block;
+            background: var(--db-orange);
+            color: white;
+            padding: 10px 24px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+        
+        .subhead {
+            font-size: 22px;
+            margin-bottom: 35px;
+            font-weight: 400;
+            opacity: 0.95;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 18px 40px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .btn-primary {
+            background: var(--db-orange);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #ff8c52;
+            transform: scale(1.05);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: var(--db-navy);
+        }
+        
+        .urgency-bar {
+            background: var(--db-dark);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .urgency-bar strong {
+            color: var(--db-orange);
+            font-weight: 700;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+        
+        .value-props {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 80px;
+        }
+        
+        .pill {
+            background: var(--db-dark);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            font-weight: 600;
+            border-left: 4px solid var(--db-orange);
+        }
+        
+        .pill-number {
+            font-size: 36px;
+            color: var(--db-orange);
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 800;
+        }
+        
+        h2 {
+            font-size: 40px;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--db-dark);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+        
+        .law-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+        
+        .law-card {
+            background: white;
+            padding: 40px;
+            border: 2px solid #e0e0e0;
+            position: relative;
+        }
+        
+        .law-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--db-orange);
+        }
+        
+        .law-card h3 {
+            color: var(--db-dark);
+            font-size: 26px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .law-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .law-card li {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 12px;
+            font-size: 15px;
+        }
+        
+        .law-card li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--db-orange);
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .cta-section {
+            background: var(--db-orange);
+            padding: 80px 20px;
+        }
+        
+        .cta-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-container h2 {
+            margin-bottom: 15px;
+            color: var(--db-dark);
+        }
+        
+        .cta-subtitle {
+            text-align: center;
+            color: #555;
+            margin-bottom: 35px;
+            font-size: 18px;
+        }
+        
+        .privacy-text {
+            font-size: 13px;
+            color: #666;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .faq-section {
+            background: #f8f8f8;
+        }
+        
+        .faq-item {
+            margin-bottom: 35px;
+            padding: 30px;
+            background: white;
+            border-left: 4px solid var(--db-orange);
+        }
+        
+        .faq-item h3 {
+            color: var(--db-dark);
+            font-size: 20px;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        
+        .faq-item p {
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 32px;
+            }
+            
+            .subhead {
+                font-size: 18px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            h2 {
+                font-size: 30px;
+            }
+            
+            .cta-container {
+                padding: 35px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="https://drbalcony.com/wp-content/uploads/2025/08/drbalcony-favicon.webp" alt="DrBalcony Logo" class="logo">
+        <div class="hero-content">
+            <span class="eyebrow">Free Webinar</span>
+            <h1>California Balcony Law Updates</h1>
+            <p class="subhead">Master SB-721 and SB-326 requirements. Protect your properties.</p>
+            <div class="cta-buttons">
+                <a href="#cta" class="btn btn-primary">Watch Webinar Free</a>
+                <a href="#cta" class="btn btn-secondary">Get Toolkit</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Urgency Bar -->
+    <div class="urgency-bar">
+        <p><strong>NOTICE:</strong> Many California cities have mailed inspection notices. Verify your compliance deadline now.</p>
+    </div>
+
+    <!-- Value Props -->
+    <div class="container">
+        <div class="value-props">
+            <div class="pill">
+                <span class="pill-number">5,000+</span>
+                Properties Inspected
+            </div>
+            <div class="pill">
+                <span class="pill-number">100%</span>
+                Compliant Reports
+            </div>
+            <div class="pill">
+                <span class="pill-number">$0</span>
+                Fines for Clients
+            </div>
+            <div class="pill">
+                <span class="pill-number">Licensed</span>
+                Inspectors
+            </div>
+        </div>
+
+        <!-- Law Explainer -->
+        <h2>California Balcony Laws</h2>
+        <div class="law-cards">
+            <div class="law-card">
+                <h3>SB-721 (Apartments)</h3>
+                <ul>
+                    <li>Applies to buildings with 3+ rental units</li>
+                    <li>Requires inspection every 6 years</li>
+                    <li>Covers balconies, decks, walkways, and stairs</li>
+                    <li>Must be completed by licensed inspector</li>
+                </ul>
+            </div>
+            <div class="law-card">
+                <h3>SB-326 (Condos/HOAs)</h3>
+                <ul>
+                    <li>Applies to common interest developments</li>
+                    <li>Inspection required every 9 years</li>
+                    <li>Covers elevated structures 6+ feet high</li>
+                    <li>Non-compliance can result in fines</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="cta">
+        <div class="cta-container">
+            <h2>Watch Now</h2>
+            <p class="cta-subtitle">Free compliance training — instant access</p>
+            <a href="https://drbalcony.com/webinar/" id="webinarBtn" class="btn btn-primary" style="width: 100%; display: block; text-align: center; margin-top: 25px;">Access Free Webinar</a>
+            <p class="privacy-text">No credit card required. Expert guidance included.</p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Questions</h2>
+            <div class="faq-item">
+                <h3>Is the webinar really free?</h3>
+                <p>Yes, it's completely free. The webinar is pre-recorded and includes downloadable checklists and compliance timelines.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What if my building is new?</h3>
+                <p>Use our checklist to confirm if you're exempt. Buildings constructed after certain dates may have different requirements, and we'll help you understand your obligations.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // UTM Tracking Script - Appends parameters to webinar link
+        (function() {
+            const params = new URLSearchParams(window.location.search);
+            const trackingParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'msclkid', 'fbclid'];
+            const trackedParams = {};
+            
+            // Capture and store parameters
+            trackingParams.forEach(param => {
+                const value = params.get(param);
+                if (value) {
+                    localStorage.setItem(param, value);
+                    trackedParams[param] = value;
+                } else {
+                    const stored = localStorage.getItem(param);
+                    if (stored) {
+                        trackedParams[param] = stored;
+                    }
+                }
+            });
+            
+            // Build query string and append to webinar button
+            const webinarBtn = document.getElementById('webinarBtn');
+            if (webinarBtn && Object.keys(trackedParams).length > 0) {
+                const queryString = new URLSearchParams(trackedParams).toString();
+                const baseUrl = webinarBtn.getAttribute('href');
+                const separator = baseUrl.includes('?') ? '&' : '?';
+                webinarBtn.setAttribute('href', baseUrl + separator + queryString);
+            }
+        })();
+    </script>
+</body>
+</html>
