@@ -96,6 +96,25 @@
             color: white;
             padding: 60px 0;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .webinar-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://drbalcony.com/wp-content/uploads/2025/10/oakland.webp') center/cover;
+            opacity: 0.2;
+            z-index: 1;
+        }
+        
+        .webinar-hero-content {
+            position: relative;
+            z-index: 2;
         }
         
         .webinar-hero-content {
