@@ -4,13 +4,13 @@ Hi Team,
 
 The direct mail landing pages are complete and ready for review. Here are the live links:
 
-**City-Specific Landing Pages:**
+City-Specific Landing Pages:
 - El Cerrito: https://requirements-for-city-direct-mail-c.vercel.app/el-cerrito.html
 - Oakland: https://requirements-for-city-direct-mail-c.vercel.app/oakland.html  
 - Oxnard: https://requirements-for-city-direct-mail-c.vercel.app/oxnard.html
 - Generic/California: https://requirements-for-city-direct-mail-c.vercel.app/generic.html
 
-**What's Done:**
+What's Done:
 - All 4 landing pages with city-specific branding and images
 - DrBalcony colors and professional government design
 - Webinar-focused content with SB-721/SB-326 compliance info
@@ -18,7 +18,7 @@ The direct mail landing pages are complete and ready for review. Here are the li
 - Mobile-responsive design
 - UTM tracking setup
 
-**What Needs Tech Team:**
+What Needs Tech Team:
 The forms are currently placeholder (they show an alert when submitted). We need the tech team to build a WordPress form that can be embedded into these pages. The form needs:
 - Name (required)
 - Email (required) 
@@ -26,7 +26,7 @@ The forms are currently placeholder (they show an alert when submitted). We need
 - City field (hidden, auto-populated)
 - UTM tracking fields (hidden)
 
-**Next Steps:**
+Next Steps:
 1. Please review the pages and let me know if any changes are needed
 2. Tech team can work on the WordPress form integration
 3. Once forms are ready, we can replace the placeholder forms
